@@ -1,6 +1,6 @@
 #____________________________________________________________________________________
 #   Purpose: Activity recomeder for days of the week +
-#   Author: Felix       Date: Feb. 25, 2025     Class: ICS3C
+#   Author: Felix       Date: Feb. 25, 2025     Class: ICS3C    Last Updated: Feb 27
 #____________________________________________________________________________________
 from threading import Thread
 
