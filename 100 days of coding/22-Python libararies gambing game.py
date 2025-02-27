@@ -54,7 +54,8 @@ while True:
     if balance == 0:
         print("You have no more money! Broke Boi!")
         break
-
+    if AinputToGamble == "exit":
+        break
     if AinputToGamble == "Secret":
         if SecretFound1 == False:
             print("You found the secret!")
