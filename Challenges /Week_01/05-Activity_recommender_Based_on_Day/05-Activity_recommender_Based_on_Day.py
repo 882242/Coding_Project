@@ -19,38 +19,38 @@ SundayR = random.randint(1, 2)
 #In the If it will check if it is 1 or 2 and if it's 1 it will be diffreent form 2
 
 #Now i have the variebles create the conditonals in conditionals
-if DayOfTheWeek == "Monday" or "monday":
+if DayOfTheWeek == "monday":
     #I make it check if mondayR is 1 or 2 and i will od for every other conditional statmenst for the days
     if MondayR == 1:
         print("Do your homework!")
     if MondayR == 2:
         print("Go to the gym!")
-elif DayOfTheWeek == "Tuesday" or "tuesday":
+elif DayOfTheWeek == "tuesday":
     if TuesdayR == 1:
         print("Go eat out")
     if TuesdayR == 2:
         print("Draw something")
-elif DayOfTheWeek == "Wednesday" or "wednesday":
+elif DayOfTheWeek == "wednesday":
     if WednesdayR == 1:
         print("Go to the library")
     if WednesdayR == 2:
         print("Play some music")
-elif DayOfTheWeek == "Thursday" or "thursday":
+elif DayOfTheWeek == "thursday":
     if ThursdayR == 1:
         print("Go to the park")
     if ThursdayR == 2:
         print("Play a game")
-elif DayOfTheWeek == "Friday" or "friday":
+elif DayOfTheWeek == "friday":
     if FridayR == 1:
         print("Go to the recreational centre")
     if FridayR == 2:
         print("Relax at home")
-elif DayOfTheWeek == "Saturday" or "saturday":
+elif DayOfTheWeek == "saturday":
     if SaturdayR == 1:
         print("Sleep in")
     if SaturdayR == 2:
         print("Hang out with friends")
-elif DayOfTheWeek == "Sunday" or "sunday":
+elif DayOfTheWeek == "sunday":
     if SundayR == 1:
         print("Study for class")
     if SundayR == 2:
