@@ -55,5 +55,7 @@ elif DayOfTheWeek == "sunday":
         print("Study for class")
     if SundayR == 2:
         print("Start a party")
+else:
+    print("You did not enter a valid day rerun the program")
 
 #Now if you type in monday it has a chance to recomend you option 1 or 2 instead of always giving you the same activity
