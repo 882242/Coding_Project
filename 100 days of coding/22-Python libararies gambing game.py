@@ -3,7 +3,7 @@ from os import WCONTINUED
 print("This is a gambling game!")
 print("The goal of the game is to get all three numbers to be the same!")
 print("You can type in 'shop' to buy buffs")
-print("This is (V1.0)")
+print("This is (V1.5)")
 balance = 50
 DoubleJackpotReward = False
 MoneyBackPassive = False
@@ -30,15 +30,6 @@ def passiveincome():
             passiveincomefunction()
             time.sleep(60)
             PassiveDebounce = False
-
-
-
-
-
-
-
-
-
 
 
 
@@ -107,6 +98,9 @@ while True:
             if PassiveIncome == True:
                 print("You already purchased this buff!")
                 continue
+        else:
+            print("Bro put in a number that is in the shop!")
+            continue
 
     if AinputToGamble == "a":
         X = random.randint(1, 10)
