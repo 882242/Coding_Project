@@ -18,6 +18,7 @@ class CountdownTimer:
         input_thread = threading.Thread(target=self._listen_for_stop)
         input_thread.start()
 
+
     def _countdown(self, seconds):
         while seconds > 0 and self.running:
             print(f"Time left: {seconds} seconds")
@@ -26,6 +27,12 @@ class CountdownTimer:
 
         if not self.running:
             print("Timer stopped by user!")
+            while not self.running:
+                user_input = input(" ")
+                if user_input.strip().lower() == "start":
+                    self.running = True
+                    break
+
         elif seconds == 0:
             print("Countdown finished!")
 
@@ -36,6 +43,8 @@ class CountdownTimer:
             if user_input.strip().lower() == "stop":
                 self.running = False  # Stop the countdown
                 break
+
+
 
 
 # Main function
