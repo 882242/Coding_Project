@@ -13,3 +13,4 @@ Number = int(input("Enter the number you want me to count to: "))
 for i in range(1, Number + 1):
     print(i)
     #i is the variable for all the numbers or the index of numbers
+#a

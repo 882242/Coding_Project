@@ -61,5 +61,5 @@ if __name__ == "__main__": #This allows the class function to become a variable
     duration = int(input("Enter the countdown time in seconds: ")) #This puts in the array of the functions which would be seconds
     print("Type 'stop' at any time to stop the timer.") #This reminds the user to type in stop to stop the timer anytime
     timer.start_timer(duration) #This puts the number that the user inputted into the functions which becomes the seconds
-
+#iasdjaodij
 

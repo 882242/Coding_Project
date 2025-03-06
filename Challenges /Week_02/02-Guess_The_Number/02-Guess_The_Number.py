@@ -17,3 +17,4 @@ while True:
     elif GuessingNumber == Number: #And this is for the number if it is correct
         print("You got it right!")
         break # This operator is here so when we guess it write the loop breaks
+#a
