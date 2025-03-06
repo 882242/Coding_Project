@@ -1,6 +1,6 @@
 #____________________________________________________________________________________
 #   Purpose: Countdown timer
-#   Author: Felix       Date: March 3, 2025     Class: ICS3C
+#   Author: Felix       Date: March 3, 2025     Class: ICS3C    Last Updated: March 6, 2025
 #____________________________________________________________________________________
 import time
 import threading
