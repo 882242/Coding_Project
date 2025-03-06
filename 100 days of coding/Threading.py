@@ -38,6 +38,6 @@ class timer:
 if __name__ == "__main__":
     timer = timer()
     print("the goal of the game is to get the timer to stop at 10 seconds exact")
-    print("input a to stop the timer")
+    print("press a and enter to stop the timer")
     input("press enter to start")
     timer.start_timer(20)
