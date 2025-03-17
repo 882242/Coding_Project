@@ -1,39 +1,35 @@
 import time
 import threading
 
-
-class Countdown:
+class timer:
     def __init__(self):
         self.running = False
 
-    def start_timer(self, seconds):
+    def start(self, seconds):
         self.running = True
 
-        timer_thread = threading.Thread(target=self._countdown, args=(seconds,))
-        timer_thread.start()
+        Timer = threading.Thread(target=self._countdown, args=(seconds,))
+        Timer.start()
 
-        listen_thread = threading.Thread(target=self._listenforstop)
-        listen_thread.start()
+        StopInput = threading.Thread(target=self._listen_for_stop)
+        StopInput.start()
 
     def _countdown(self, seconds):
         while seconds > 0 and self.running:
-            print(f"time left : {seconds}")
+            print(f"time left: {seconds} seconds")
             time.sleep(1)
-            seconds = seconds - 1
+            seconds -= 1
         if not self.running:
-            print("timer stopped")
-        elif seconds == 0:
-            print("countdown finished")
+            print("timer stopped by user")
 
-    def _listenforstop(self):
+    def _listen_for_stop(self):
         while self.running:
-            UUserinput = input("  ")
-            if UUserinput.strip().lower() == "stop":
+            user_input = input(" ")
+            if user_input.strip().lower() == "stop":
                 self.running = False
                 break
 
-
 if __name__ == "__main__":
-    timer = Countdown()
-    duration = int(input("Type in the number for me to countdown:  "))
-    timer.start_timer(duration)
+    timer = timer()
+    Duration = int(input("Enter the duration in seconds: "))
+    timer.start(Duration)

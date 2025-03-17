@@ -2,8 +2,7 @@
 #   Purpose: Countdown timer
 #   Author: Felix       Date: March 3, 2025     Class: ICS3C    Last Updated: March 6, 2025
 #____________________________________________________________________________________
-import time
-import threading
+
 
 
 #This is a class function, which is like a function built up by alot of functions
@@ -20,46 +19,43 @@ dog1 = Dog("Rover", "Labrador") #Now we can put dog 1 as a variable for the vari
 print(dog1.name) #This prints ROver
 print(dog1.breed) #This prints Labrador
 
-#The self is self btw, I don't really know how to explain in detail, it is self. You can kind of see when i print in the parnthesis it's dog1.name which copies the self.name
+#The self is self, I don't really know how to explain in detail, it is self. You can kind of see when i print in the parnthesis it's dog1.name which copies the self.name
 '''
+import time
+import threading
 
-class CountdownTimer: #This class is for the timer
-    def __init__(self):
-        self.running = False #This is a variable for if the system is running or a boulian value
+class timer:
+    def __init__(self): #this init is a part of the class function that can help easily identify things like self
+        self.running = False #we put the class it self to false so it basicially stops the whole class function
 
-    def start_timer(self, seconds): #This is the function for starting and we have an array for seconds
-        self.running = True  #This is to let the timer to start
+    def start(self, seconds): #here we define a function to start, the self and seconds is an array that we are using
+        self.running = True #this makes running true and now it will run the things at the buttom
+        #these 2 threads make it so it can run 2 things at once, the timer is for the countdown and the stop input is to stop the timer
+        Timer = threading.Thread(target=self._countdown, args=(seconds,))
+        Timer.start()
+#we have to define the target function which we did in the "target="
+        StopInput = threading.Thread(target=self._listen_for_stop)
+        StopInput.start()
+#and we have to start it
+    def _countdown(self, seconds): #here we define the cd
+        while seconds > 0 and self.running: #we check if seconds is greater than 0 and if self.running is true
+            print(f"time left: {seconds} seconds") #this is the cd loop
+            time.sleep(1)
+            seconds -= 1
+        if not self.running: #here this checks if self.running is false if it does it does wants on the bottom
+            print("timer stopped by user")
+        elif seconds == 0: #this checks if seconds is 0 and tells the user the cd is finished
+            print("Countdown finished!")
 
-        timer_thread = threading.Thread(target=self._countdown, args=seconds) #I created a thread that runs the countdown in the backround, args is the list of arrays you want or a tuple value
-        timer_thread.start()
-
-        #Now we need to create a thread that checks if i said stop to stop the countdown
-        listenForStop = threading.Thread(target=self._listen_for_stop) #This does not need args since we are looking for 'stop' and not seconds
-        listenForStop.start()
-
-    def _countdown(self, seconds): #This is function is for the target of the thread and is also the countdown timer
-        while seconds > 0 and self.running: #this loop checks if this class is running which Countdown.start_timer must be started
-            print(f"Time left: {seconds} seconds") #The f in front of the string makes me be able to call something using {} which i called seconds in the string
-            time.sleep(1)  # Wait for 1 second
-            seconds = seconds - 1 # this subtracts the timer
-            if not self.running: #This makes sense for the next function as it stops the timer
-                print("Timer stopped by user!")
-            elif seconds == 0: #This checks if the seconds is 0, and if it is it stops
-                print("Countdown finished!")
-                break
-
-    def _listen_for_stop(self): #This function basicially checks if you put stop, and if you do it stops the countdown
+    def _listen_for_stop(self): #this is our listen for stop function
         while self.running:
-            User_input = input()
-            if User_input.strip().lower() == "stop":
-                self.running = False #Thsi stops the process of counting down
+            user_input = input(" ") #this is the user input
+            if user_input.strip().lower() == "stop":  #this checks it the user saids stop
+                self.running = False #if it sees stop self.running would = False and it does what our loop on top does, print timer has been stopped by user
                 break
 
-
-if __name__ == "__main__": #This allows the class function to become a variable
-    timer = CountdownTimer()
-    duration = int(input("Enter the countdown time in seconds: ")) #This puts in the array of the functions which would be seconds
-    print("Type 'stop' at any time to stop the timer.") #This reminds the user to type in stop to stop the timer anytime
-    timer.start_timer(duration) #This puts the number that the user inputted into the functions which becomes the seconds
-#iasdjaodij
-
+if __name__ == "__main__": #this operator allows classes, which is the whole thing above to be able to be named
+    timer = timer() #here we name the timer
+    Duration = int(input("Enter the duration in seconds: ")) #this is the duration that the user wants to put in
+    timer.start(Duration) #we put the duration in, and now it acts as a seconds in the class function
+    #the function timer.start() would've not worked if it wasn't for the name operator since we can't access the child of the class, or the start so it can start the cd

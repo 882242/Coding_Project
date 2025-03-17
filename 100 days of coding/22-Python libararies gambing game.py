@@ -47,7 +47,7 @@ while True:
         break
     if AinputToGamble == "exit":
         break
-    if AinputToGamble == "Secret":
+    if AinputToGamble.lower() == "secret":
         if SecretFound1 == False:
             print("You found the secret!")
             print("50 coins added to your balance!")
@@ -102,7 +102,7 @@ while True:
             print("Bro put in a number that is in the shop!")
             continue
 
-    if AinputToGamble == "a":
+    if AinputToGamble.strip().lower() == "a":
         X = random.randint(1, 10)
         Y = random.randint(1, 10)
         Z = random.randint(1, 10)
