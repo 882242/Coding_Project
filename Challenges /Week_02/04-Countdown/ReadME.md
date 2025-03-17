@@ -6,4 +6,4 @@ which i'm not doing, so now i will be doing research on how to have 2 inputs at 
 python usually blocks until one input is entered
 
 I ask Ai to create a code, and then i studied it until i finally understand it, I also remembered
-the code block by block.
+the code block by block, and explain in inside the code
