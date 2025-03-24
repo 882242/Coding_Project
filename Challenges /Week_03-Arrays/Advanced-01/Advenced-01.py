@@ -23,6 +23,8 @@ def _student_list(): #this is just a function to print the list of students
     for student in students:
         print(student.name, student.age, student.major)
 
+print("you can use commands add, find, remove, print and modify")
+
 while True:
     Operator = input(" ") #This is our operator that can find, print, add, remove, and modify students
     if Operator == "print": #if operator is print it will print
