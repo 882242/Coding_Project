@@ -1,8 +1,8 @@
-##Advance Challenge
+# Advance Challenge
 
-###For this challenge I want to do something quite the same as out grocery list
+For this challenge I want to do something quite the same as out grocery list
 
-###It should have the following features:
+It should have the following features:
  - add
  - modify
  - remove
