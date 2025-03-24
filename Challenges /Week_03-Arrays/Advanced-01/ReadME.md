@@ -12,9 +12,9 @@ It should have the following features:
  - age
  - name
 
-###code outline
+code outline
 
-`class students
+```class students
 self.age
 self.name
 self.major
@@ -39,4 +39,4 @@ if operator remove
     what name
     remove
 if operator print
-    print all'
+    print all'``
