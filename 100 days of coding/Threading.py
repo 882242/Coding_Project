@@ -25,7 +25,9 @@ class timer:
             print(f" {seconds}")
             if seconds == 10:
                 print("you won")
-        elif seconds == 20:
+            else:
+                print("you failed")
+        elif seconds == 0:
             print("you failed")
 
     def _listen(self):

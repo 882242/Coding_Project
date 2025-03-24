@@ -4,7 +4,7 @@
 #____________________________________________________________________________________
 
 
-# Simple input and if statement that is the same as 01 and 02
+# Simple input and if statement that is the same as 01+02+03_Adding_Modifying_Removing_Items_From_A_List and 02
 Age = int(input("Enter your age: "))
 #adding randomizer or which party to vote using varieble
 import random
