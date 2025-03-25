@@ -14,7 +14,8 @@ It should have the following features:
 
 code outline
 
-```class students
+```
+class students
 self.age
 self.name
 self.major
