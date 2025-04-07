@@ -18,8 +18,8 @@ class timer:
     def _timer(self, seconds):
         while self.running:
             print(f" {seconds}")
-            time.sleep(1)
-            seconds -= 1
+            time.sleep(0.1)
+            seconds -= 0.1
         if not self.running:
             print("timer stopped")
             print(f" {seconds}")
