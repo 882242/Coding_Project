@@ -8,10 +8,10 @@ import random
 import time
 import threading
 
-window = Tk()
+window = Tk() #Tkinter shortcut
 
-Coins = 100
-twoxWIN = False
+Coins = 100 #this is the coin
+twoxWIN = False #everything here and under are the unlocks of abilities which are set to false cause you don't spawn with them
 TripleWIN = False
 Income1 = False
 Income2 = False
@@ -19,6 +19,9 @@ HalfTheChance = False
 GodWIN = False
 GodINCOME = False
 GodCHANCE = False
+#_______________________________________________________________________________________
+
+#These are all the buttons and labels of the things in the game, Basically everything here is the visuals
 
 Gamble_button = Button(window, text="Gamble", command=lambda: Gamble())
 Gamble_button.place(x=355, y=175)
@@ -100,6 +103,9 @@ PURCHInsaneGODChance.place(x=690, y=235)
 
 InsanceFODCHANE = Label(window, text="Godly Chance (10000)")
 InsanceFODCHANE.place(x=560, y=240)
+#_______________________________________________________________________________________
+
+#These are all the Functions to unlock a certain ability
 
 def BUYGODCHANCE():
     global Coins
@@ -198,7 +204,10 @@ def UNlock_2x():
         twoxWIN = True
         BoughtUNLOCK2x = Label(window, text="2x Win Bought")
         BoughtUNLOCK2x.place(x=55, y=75)
+#_______________________________________________________________________________________
 
+#This function in particular is the Gambling function which I had to copy and paste a specific code (Half the Chance and GodCHANCE)
+#So I can skip some code so i Lowk went lazy
 
 def Gamble():
     global Coins
@@ -322,9 +331,12 @@ def Gamble():
         if Coins == 0:
             Win_lose.config(text="Broke ahh")
 
+#_______________________________________________________________________________________
 
+#windows configurations
 
 window.title("Gambling Game")
 window.geometry("800x400")
 window.mainloop()
 
+#This is a basic copy of the Old gambling game and then we just added Visuals, but we also got rid of a while true loop
